@@ -166,7 +166,7 @@ p a:hover {
 }
 
 .btn:hover {
-    border: solid rgb(255, 255, 255) 1px;
+    border: solid rgb(255, 255, 255) 1.5px;
 }
 
 hr {
