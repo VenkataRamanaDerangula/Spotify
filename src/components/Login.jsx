@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Login.css";
+import { div } from "framer-motion/client";
 
 function Login() {
     const [showLoginForm, setShowLoginForm] = useState(false);  // Default to showing landing page
@@ -34,21 +35,23 @@ function Login() {
                 </div>
             ) : showLoginForm ? (
                 // Login Form
+                <div className="login-parent">
                 <div className="login-page">
-                    <h1 className="logo">Log in to Spotify</h1>
+                    <i class="fa-brands fa-spotify fa-2xl"></i>
+                    <h1 className="log">Log in to Spotify</h1>
                     <div className="buttons">
-                        <button className="btn">Continue with Google</button>
+                        <button className="btn"><img src="https://accounts.scdn.co/sso/images/new-google-icon.72fd940a229bc94cf9484a3320b3dccb.svg" alt="" />Continue with Google</button>
                         <button className="btn">Continue with Phone Number</button>
                     </div>
                     <hr />
                     <div className="credentials-section">
                         <div className="input-field">
                             <label htmlFor="email">Email or Username</label>
-                            <input type="text" id="email" placeholder="Enter your email" />
+                            <input type="text" id="email" placeholder="Email or username" />
                         </div>
                         <div className="input-field">
                             <label htmlFor="password">Password</label>
-                            <input type="password" id="password" placeholder="Enter your password" />
+                            <input type="password" id="password" placeholder="Password" />
                         </div>
                         <button className="login-button">Log In</button>
                         <p className="forgot-password">Forgot your password?</p>
@@ -56,6 +59,7 @@ function Login() {
                     <p className="signup">
                         New to Spotify? <a href="#" onClick={handleSignUpClick}>Sign up free</a>
                     </p>
+                </div>
                 </div>
             ) : (
                 // Sign Up Form
